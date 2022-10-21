@@ -1,0 +1,3 @@
+C:/RaspPico/Final-Script/build/pioasm/CMakeFiles/pioasm.dir
+C:/RaspPico/Final-Script/build/pioasm/CMakeFiles/edit_cache.dir
+C:/RaspPico/Final-Script/build/pioasm/CMakeFiles/rebuild_cache.dir

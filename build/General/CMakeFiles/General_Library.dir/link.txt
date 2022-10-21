@@ -1,0 +1,2 @@
+"D:\Program File x86\12.2 mpacbti-bet1\bin\arm-none-eabi-ar.exe" qc libGeneral_Library.a CMakeFiles/General_Library.dir/MPU6050_I2C.c.obj CMakeFiles/General_Library.dir/Uart.c.obj CMakeFiles/General_Library.dir/Motor_ESC.c.obj
+"D:\Program File x86\12.2 mpacbti-bet1\bin\arm-none-eabi-ranlib.exe" libGeneral_Library.a
