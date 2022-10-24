@@ -9,24 +9,7 @@
 #define UART_TX_PIN 4
 #define UART_RX_PIN 5
 
-void Config(int Baud_Rate)
-{
-    uart_init(UART_ID, Baud_Rate);
-    gpio_set_function(UART_TX_PIN, GPIO_FUNC_UART);
-    gpio_set_function(UART_RX_PIN, GPIO_FUNC_UART);
-
-    int Uart_Interrup = UART1_IRQ;
-
-    // Habilitar la interrupción
-    irq_set_exclusive_handler(Uart_Interrup, Get_Message);
-    irq_set_enabled(Uart_Interrup, true);
-    uart_set_irq_enables(UART_ID, true, false);
-}
-
-void Send_Message(char *message)
-{
-    uart_puts(UART_ID, message);
-}
+#define UART1_IRQ 1
 
 // RX función de interrupción
 int Get_Message()
@@ -45,4 +28,23 @@ int Get_Message()
         chars_rxed++;
     }
     return ch;
+}
+
+void Config(int Baud_Rate)
+{
+    uart_init(UART_ID, Baud_Rate);
+    gpio_set_function(UART_TX_PIN, GPIO_FUNC_UART);
+    gpio_set_function(UART_RX_PIN, GPIO_FUNC_UART);
+
+    int Uart_Interrup = UART1_IRQ;
+
+    // Habilitar la interrupción
+    irq_set_exclusive_handler(Uart_Interrup, Get_Message);
+    irq_set_enabled(Uart_Interrup, true);
+    uart_set_irq_enables(UART_ID, true, false);
+}
+
+void Send_Message(char *message)
+{
+    uart_puts(UART_ID, message);
 }
